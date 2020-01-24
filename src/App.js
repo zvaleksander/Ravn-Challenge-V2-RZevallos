@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/Header';
+import Characters from './components/Characters';
+import Character from './components/Character';
+
+class App extends React.Component {
+    state = {
+        idCharacter: ""
+    }
+
+    update = (id) => {
+        console.log(id);
+        this.setState({idCharacter: id});
+    }
+
+    render() {
+        return (
+            <div className="container-fluid">
+                <div className="row ravn-black navbar">
+                    <Header title={'Ravn Star Wars Registry'} />
+                </div>
+                <div className="row">
+                    <div className="col-lg-4 col-md-5 col-sm-12 border-right-solid">
+                        <Characters getId={this.update} />
+                    </div>
+                    <div className="col-lg-8 col-md-7 col-sm-12">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-8 col-sm-12">
+                                <Character id={this.state.idCharacter} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

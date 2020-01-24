@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.navbar {
+    padding: 8pt 16pt 8pt 16pt;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    padding: 32pt 16pt 8pt 16pt;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ravn-black {
+    background-color: #121212;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-dark {
+    color: #333333;
 }
 
-.App-link {
-  color: #61dafb;
+.text-white {
+    color: #FFFFFF;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-light {
+    color: #828282;
+}
+
+.text-emphasis {
+    color: #EC5757;
+    font-weight: bold;
+}
+
+.h2-default {
+    color: rgba(0, 0, 0, 1);
+    font-size: 17pt;
+}
+
+.h2-low-emphasis {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 17pt;
+}
+
+.h2-high-emphasis {
+    color: rgba(235, 87, 87, 1);
+    font-size: 17pt;
+}
+
+.p1-default {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14pt;
+}
+
+.p1-low-emphasis {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14pt;
+}
+
+.cell-person {
+    border-bottom: 0.5pt solid rgba(0, 0, 0, 0.3);
+    padding-top: 16pt;
+    padding-bottom: 16pt;
+}
+
+.cell-notice {
+    padding-top: 16pt;
+    padding-bottom: 16pt;
+    text-align: center;
+}
+
+.cell-loading {
+    padding-top: 16pt;
+    padding-bottom: 16pt;
+    text-align: center;
+}
+
+.cell-data {
+    border-bottom: 0.5pt solid rgba(0, 0, 0, 0.3);
+    padding: 16pt;
+}
+
+.border-right-solid {
+    border-right: 0.5pt solid rgba(0, 0, 0, 0.3);
 }

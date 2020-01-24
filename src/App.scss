@@ -1,3 +1,8 @@
+$smallFontSize: 14pt;
+$mediumFontSize: 17pt;
+$largeFontSize: 20pt;
+$defaultPadding: 16pt;
+
 .navbar {
     padding: 8pt 16pt 8pt 16pt;
 }
@@ -29,50 +34,50 @@
 
 .h2-default {
     color: rgba(0, 0, 0, 1);
-    font-size: 17pt;
+    font-size: $mediumFontSize;
 }
 
 .h2-low-emphasis {
     color: rgba(0, 0, 0, 0.3);
-    font-size: 17pt;
+    font-size: $mediumFontSize;
 }
 
 .h2-high-emphasis {
     color: rgba(235, 87, 87, 1);
-    font-size: 17pt;
+    font-size: $mediumFontSize;
 }
 
 .p1-default {
     color: rgba(0, 0, 0, 1);
-    font-size: 14pt;
+    font-size: $smallFontSize;
 }
 
 .p1-low-emphasis {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 14pt;
+    font-size: $smallFontSize;
 }
 
 .cell-person {
     border-bottom: 0.5pt solid rgba(0, 0, 0, 0.3);
-    padding-top: 16pt;
-    padding-bottom: 16pt;
+    padding-top: $defaultPadding;
+    padding-bottom: $defaultPadding;
 }
 
 .cell-notice {
-    padding-top: 16pt;
-    padding-bottom: 16pt;
+    padding-top: $defaultPadding;
+    padding-bottom: $defaultPadding;
     text-align: center;
 }
 
 .cell-loading {
-    padding-top: 16pt;
-    padding-bottom: 16pt;
+    padding-top: $defaultPadding;
+    padding-bottom: $defaultPadding;
     text-align: center;
 }
 
 .cell-data {
     border-bottom: 0.5pt solid rgba(0, 0, 0, 0.3);
-    padding: 16pt;
+    padding: $defaultPadding;
 }
 
 .border-right-solid {
@@ -80,6 +85,6 @@
 }
 
 .link {
-    font-size: 20pt;
     cursor: pointer;
+    font-size: $largeFontSize;
 }

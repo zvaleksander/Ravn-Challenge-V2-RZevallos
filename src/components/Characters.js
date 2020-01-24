@@ -48,7 +48,7 @@ class Characters extends React.Component {
                                 </p>
                             </div>
                             <div className="col-2 my-auto">
-                                <span className="h2-default" onClick={() => this.sendId(id)}>&gt;</span>
+                                <span className="link" onClick={() => this.sendId(id)}>&gt;</span>
                             </div>
                         </div>
                     ));

@@ -13,6 +13,7 @@ query ($id: ID){
         eyeColor
         hairColor
         skinColor
+        birthYear
         starships {
             id
             name
@@ -22,7 +23,12 @@ query ($id: ID){
 
 class Character extends React.Component {
     render() {
-        console.log(this.props.id);
+        if (!this.props.id) {
+            return (
+                <div></div>
+            );
+        }
+
         return (
             <Query query={GET_CHARACTER_BY_ID} variables={{id: this.props.id}}>
                 {
@@ -53,26 +59,25 @@ class Character extends React.Component {
 
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Eye Color</span>
-                                    <span className="p1-default float-right">{data.Person.eyeColor}</span>
+                                    <span className="p1-default float-right">{data.Person.eyeColor ? data.Person.eyeColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Hair Color</span>
-                                    <span className="p1-default float-right">{data.Person.hairColor}</span>
+                                    <span className="p1-default float-right">{data.Person.hairColor ? data.Person.hairColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Skin Color</span>
-                                    <span className="p1-default float-right">{data.Person.skinColor}</span>
+                                    <span className="p1-default float-right">{data.Person.skinColor ? data.Person.skinColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Birth Year</span>
-                                    <span className="p1-default float-right">{data.Person.birthYear}</span>
+                                    <span className="p1-default float-right">{data.Person.birthYear ? data.Person.birthYear : '-'}</span>
                                 </div>
-
                                 <div className="header">
                                     <p className="h2-default">Vehicles</p>
                                 </div>
                                 {
-                                    data.Person.vehicles.map(({ id, name }) => (
+                                    data.Person.starships.map(({ id, name }) => (
                                         <div className="cell-data" key={id}>
                                             <span className="p1-low-emphasis">{name}</span>
                                         </div>

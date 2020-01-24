@@ -78,3 +78,8 @@
 .border-right-solid {
     border-right: 0.5pt solid rgba(0, 0, 0, 0.3);
 }
+
+.link {
+    font-size: 20pt;
+    cursor: pointer;
+}

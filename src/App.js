@@ -7,11 +7,10 @@ import Character from './components/Character';
 
 class App extends React.Component {
     state = {
-        idCharacter: ""
+        idCharacter: ''
     }
 
     update = (id) => {
-        console.log(id);
         this.setState({idCharacter: id});
     }
 

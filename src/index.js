@@ -8,7 +8,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 const client = new ApolloClient({
-    uri: 'https://swapi.graph.cool/'
+    // uri: 'https://swapi.graph.cool/'
+    uri: 'http://swapi-graphql-ravn.herokuapp.com'
 });
 
 ReactDOM.render(

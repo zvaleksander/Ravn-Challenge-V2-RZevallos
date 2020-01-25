@@ -81,7 +81,6 @@ $defaultPadding: 16pt;
 }
 
 .fixed-section {
-    border-right: 0.5pt solid rgba(0, 0, 0, 0.3);
     max-height: 100vh;
     overflow: auto;
 }
@@ -96,4 +95,8 @@ $defaultPadding: 16pt;
     height: 30px;
     text-align: center;
     width: 30px;
+}
+
+.border-right-solid {
+    border-right: 0.5pt solid rgba(0, 0, 0, 0.3);
 }

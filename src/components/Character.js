@@ -6,17 +6,19 @@ import Loading from './Loading';
 import Message from './Message';
 
 const GET_CHARACTER_BY_ID = gql`
-query ($id: ID){
-    Person (id: $id) {
+query($id: ID) {
+    person(id: $id) {
         id
         name
         eyeColor
         hairColor
         skinColor
         birthYear
-        starships {
-            id
-            name
+        vehicleConnection {
+            vehicles {
+                id
+                name
+            }
         }
     }
 }`;
@@ -30,7 +32,7 @@ class Character extends React.Component {
         }
 
         return (
-            <Query query={GET_CHARACTER_BY_ID} variables={{id: this.props.id}}>
+            <Query query={GET_CHARACTER_BY_ID} variables={{ id: this.props.id }}>
                 {
                     ({ loading, error, data }) => {
                         if (loading) {
@@ -45,12 +47,6 @@ class Character extends React.Component {
                             );
                         }
 
-                        if (!data.Person) {
-                            return (
-                                <div></div>
-                            );
-                        }
-
                         return (
                             <>
                                 <div className="header">
@@ -59,29 +55,33 @@ class Character extends React.Component {
 
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Eye Color</span>
-                                    <span className="p1-default float-right">{data.Person.eyeColor ? data.Person.eyeColor : '-'}</span>
+                                    <span className="p1-default float-right">{data.person.eyeColor ? data.person.eyeColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Hair Color</span>
-                                    <span className="p1-default float-right">{data.Person.hairColor ? data.Person.hairColor : '-'}</span>
+                                    <span className="p1-default float-right">{data.person.hairColor ? data.person.hairColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Skin Color</span>
-                                    <span className="p1-default float-right">{data.Person.skinColor ? data.Person.skinColor : '-'}</span>
+                                    <span className="p1-default float-right">{data.person.skinColor ? data.person.skinColor : '-'}</span>
                                 </div>
                                 <div className="cell-data">
                                     <span className="p1-low-emphasis">Birth Year</span>
-                                    <span className="p1-default float-right">{data.Person.birthYear ? data.Person.birthYear : '-'}</span>
+                                    <span className="p1-default float-right">{data.person.birthYear ? data.person.birthYear : '-'}</span>
                                 </div>
                                 <div className="header">
                                     <p className="h2-default">Vehicles</p>
                                 </div>
                                 {
-                                    data.Person.starships.map(({ id, name }) => (
-                                        <div className="cell-data" key={id}>
-                                            <span className="p1-low-emphasis">{name}</span>
-                                        </div>
-                                    ))
+                                    data.person.vehicleConnection.vehicles.length === 0
+                                        ?   <div className="cell-data">
+                                                <span className="p1-low-emphasis">No vehicles found</span>
+                                            </div>
+                                        :   data.person.vehicleConnection.vehicles.map(({ id, name }) => (
+                                                <div className="cell-data" key={id}>
+                                                    <span className="p1-low-emphasis">{name}</span>
+                                                </div>
+                                            ))
                                 }
                             </>
                         )

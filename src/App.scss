@@ -80,8 +80,10 @@ $defaultPadding: 16pt;
     padding: $defaultPadding;
 }
 
-.border-right-solid {
+.fixed-section {
     border-right: 0.5pt solid rgba(0, 0, 0, 0.3);
+    max-height: 100vh;
+    overflow: auto;
 }
 
 .link {

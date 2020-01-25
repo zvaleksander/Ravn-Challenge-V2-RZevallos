@@ -21,7 +21,7 @@ class App extends React.Component {
                     <Header title={'Ravn Star Wars Registry'} />
                 </div>
                 <div className="row">
-                    <div className="col-lg-4 col-md-5 col-sm-12 border-right-solid">
+                    <div className="col-lg-4 col-md-5 col-sm-12 fixed-section">
                         <Characters getId={this.update} />
                     </div>
                     <div className="col-lg-8 col-md-7 col-sm-12">
